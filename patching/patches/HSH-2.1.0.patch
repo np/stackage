@@ -1,0 +1,36 @@
+diff -ru orig/HSH.cabal new/HSH.cabal
+--- orig/HSH.cabal	2013-10-31 23:19:44.267401985 +0100
++++ new/HSH.cabal	2013-10-31 23:19:44.000000000 +0100
+@@ -19,10 +19,6 @@
+ Cabal-Version: >=1.2.3
+ Build-type: Simple
+
+-flag buildtests
+-  description: Build the executable to run unit tests
+-  default: False
+-
+ library
+   Exposed-Modules: HSH, HSH.Command, HSH.ShellEquivs, HSH.Channel
+   Extensions: ExistentialQuantification, OverlappingInstances,
+@@ -33,20 +29,3 @@
+   if !os(windows)
+     Build-Depends: unix
+   GHC-Options: -O2 -threaded -Wall
+-
+-Executable runtests
+-  if flag(buildtests)
+-    Buildable: True
+-    Build-Depends: base >= 4 && < 5, mtl, process, regex-compat,
+-      MissingH>=1.0.0,
+-      hslogger, filepath, regex-base, regex-posix, directory,
+-      bytestring, HUnit, testpack
+-    if !os(windows)
+-      Build-Depends: unix
+-  else
+-    Buildable: False
+-  Main-Is: runtests.hs
+-  HS-Source-Dirs: testsrc, .
+-  Extensions: ExistentialQuantification, OverlappingInstances,
+-    UndecidableInstances, FlexibleContexts, CPP
+-  GHC-Options: -O2 -threaded
+Only in orig: testsrc

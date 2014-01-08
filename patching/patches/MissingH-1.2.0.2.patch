@@ -1,0 +1,69 @@
+diff -ru orig/MissingH.cabal new/MissingH.cabal
+--- orig/MissingH.cabal	2013-10-31 23:19:44.564069365 +0100
++++ new/MissingH.cabal	2013-10-31 23:19:44.000000000 +0100
+@@ -96,45 +96,3 @@
+    Build-Depends: base < 3
+  If ! os(windows)
+    Build-Depends: unix
+-
+-test-suite runtests
+-  type:           exitcode-stdio-1.0
+-
+-  Build-Depends: network, parsec, base,
+-               mtl, HUnit, regex-compat,
+-               filepath,
+-               hslogger
+-  If flag(splitBase)
+-   Build-Depends: base >= 4, base < 5, directory, random, process, old-time,
+-                             containers, old-locale, array, time
+-  Else
+-   Build-Depends: base < 3
+-  If ! os(windows)
+-   Build-Depends: unix
+-  Build-Depends: testpack, QuickCheck, HUnit
+-
+-  Main-Is: runtests.hs
+-  HS-Source-Dirs: testsrc, ., src
+-  Other-Modules: Bitstest,
+-    CRC32GZIPtest,
+-    CRC32POSIXtest,
+-    Eithertest,
+-    GZiptest,
+-    Globtest,
+-    HVFStest,
+-    HVIOtest,
+-    IOtest,
+-    Listtest,
+-    MIMETypestest,
+-    Maptest,
+-    Pathtest,
+-    ProgressTrackertest,
+-    Str.CSVtest,
+-    Strtest,
+-    Tests,
+-    Timetest,
+-    WildMatchtest
+-  Extensions: ExistentialQuantification, OverlappingInstances,
+-    UndecidableInstances, CPP, Rank2Types,
+-    MultiParamTypeClasses, FlexibleInstances, FlexibleContexts,
+-    ScopedTypeVariables
+Only in orig/testsrc: Bitstest.hs
+Only in orig/testsrc: CRC32GZIPtest.hs
+Only in orig/testsrc: CRC32POSIXtest.hs
+Only in orig/testsrc: Eithertest.hs
+Only in orig/testsrc: Globtest.hs
+Only in orig/testsrc: GZiptest.hs
+Only in orig/testsrc: HVFStest.hs
+Only in orig/testsrc: HVIOtest.hs
+Only in orig/testsrc: IOtest.hs
+Only in orig/testsrc: Listtest.hs
+Only in orig/testsrc: Maptest.hs
+Only in orig/testsrc: MIMETypestest.hs
+Only in orig/testsrc: Pathtest.hs
+Only in orig/testsrc: ProgressTrackertest.hs
+Only in orig/testsrc: runtests.hs
+Only in orig/testsrc: Str
+Only in orig/testsrc: Strtest.hs
+Only in orig/testsrc: Tests.hs
+Only in orig/testsrc: Timetest.hs
+Only in orig/testsrc: WildMatchtest.hs
