@@ -287,6 +287,20 @@ defaultStablePackages ghcVer = unPackageMap $ execWriter $ do
       -- https://github.com/fpco/stackage/issues/163
       addRange "Michael Snoyman" "biophd" "< 0.0.6 || > 0.0.6"
 
+    mapM_ (add "Nicolas Pouillard <np@nicolaspouillard.fr>") $ words =<<
+        ["json-tools csv-nptools hlatex nptools"
+        ,"Agda HSH"
+        -- yi deps
+        --,"concrete-typerep"
+        ]
+
+        -- "yi"
+        {-
+concrete-typerep-0.1.0.2 cannot use: base-4.6.0.1 -- <4.4
+vty-4.7.3 cannot use: Cabal-1.16.0 -- ==1.17.*
+yi-0.7.0 cannot use: hashable-1.1.2.5 -- ==1.2.*
+        -}
+
     -- https://github.com/fpco/stackage/issues/46
     addRange "Michael Snoyman" "QuickCheck" "< 2.6"
 
