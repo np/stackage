@@ -288,8 +288,17 @@ defaultStablePackages ghcVer = unPackageMap $ execWriter $ do
       addRange "Michael Snoyman" "biophd" "< 0.0.6 || > 0.0.6"
 
     mapM_ (add "Nicolas Pouillard <np@nicolaspouillard.fr>") $ words =<<
-        ["json-tools csv-nptools hlatex nptools"
-        ,"Agda HSH"
+        -- owned
+        ["json-tools csv-nptools frquotes hlatex nptools"
+        -- contributor
+        ,"Agda"
+        -- user
+        ,"HSH rascal haskell-awk gist hint BNFC txt-sushi"
+        ,"splot timeplot hledger"
+
+        -- maintained by others
+        -- pandoc diagrams xmonad
+
         -- yi deps
         --,"concrete-typerep"
         ]
